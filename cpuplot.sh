@@ -17,19 +17,23 @@ do
             exit 0;;
         -o)
             out_file_name="$2"; shift;
-            echo out_file_name is "'"$out_file_name"'";
             shift;;
         -t)
-            type="$2"; shift;
-            echo $type;
+            if [ $2 = "filledcurve" ]; then
+                type="$2"; shift;
+            elif [ $2 = "lines" ]; then
+                type="$2"; shift;
+            else
+                echo "type should be one of 'filledcurve' and 'lines'";
+                echo "Usage: cpuplot [-h] [-o out_file_name] [-t type] [-c color] -n <60-600>";
+                exit 2;
+            fi
             shift;;
         -c)
             color="$2"; shift;
-            echo $color;
             shift;;
         -n)
             size="$2"; shift;
-            echo $size;
             shift;;
         "")
             shift; break;;
