@@ -4,10 +4,14 @@ if [ $? -ne 0 ]; then
     echo "Usage: cpuplot [-h] [-o out_file_name] [-t type] [-c color] -n <60-600>"
     exit 2
 fi
+
+# Set argument
 size=0
 out_file_name="out.png"
 type="filledcurve"
 color="#1E90FF"
+
+# Cut the tags
 while true;
 do
     case "$1"
@@ -58,4 +62,10 @@ do
             shift; break;;
     esac
 done
-        
+
+# See if size is set or not
+if [ $size -eq 0 ]; then
+    echo "num must be set";
+    echo "Usage: cpuplot [-h] [-o out_file_name] [-t type] [-c color] -n <60-600>"
+    exit 2;
+fi
