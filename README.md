@@ -19,7 +19,7 @@ Codes for the system administration class.
 ###### Requirement
 - Use gnuplot to draw the CPU usage.
 - CPU usage is logged in a log file. You only need to read and plot it.
-- cpuplot [-h] [-o out_file_name] [-t type] [-c color] -n <60-600>
+- cpuplot [-h] [-o out\_file\_name] [-t type] [-c color] -n \<60-600\>
 - -h print the help.
 - -o set the output file name. (default: out.png)
 - -t set the graph type. (one of ‘filledcurve’, ‘lines’, default: ‘filledcurve’)
@@ -27,14 +27,21 @@ Codes for the system administration class.
 - -n set the number of point should use. (Must be set. Should be in range [60-600])
 - Read LOGFILE environment variable. If it is not set, use “/tmp/sysmonitor”
 - If type is not one of ‘filledcurve’, ‘lines’, you should print error message and help.
+
 >   type should be one of 'filledcurve' and 'lines'.
+
 - If color is not in hexadecimal form (a leading sharp ‘#’ and 6 hex digits.), you should print error message and help.
+
 >   color format error.
+
 - If the number specified by –n is not in [60-600], you should print error message and help.
+
 >   num should be in range 60 - 600.
+
 - It doesn’t matter which is checked first.
 - You can generate temporary files, but you need to clean them when exit.
 -Image output format
+
 >   The title should be “CPU Usage”.
     The y-title should be “CPU Usage (%)”.
     The x-title should be ”time from now (sec)”.
