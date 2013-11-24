@@ -11,3 +11,6 @@ Codes for the system administration class.
 - Calculate the sum of all file size.
 - List the top 5 biggest files.
 - Only consider the regular file. Do not count in the link, FIFO, block device... etc.
+
+#### p1.awk
+>   command's awk part's code.
