@@ -30,7 +30,14 @@ do
             fi
             shift;;
         -c)
-            color="$2"; shift;
+            string=$2;
+            if [ `expr $2 : '#[A-F0-9]\{6\}'` -eq ${#string} ]; then
+                color="$2"; shift;
+            else
+                echo "color format error"
+                echo "Usage: cpuplot [-h] [-o out_file_name] [-t type] [-c color] -n <60-600>";
+                exit 2;
+            fi
             shift;;
         -n)
             if [ $2 -gt 60 ]; then
