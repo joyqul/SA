@@ -33,7 +33,19 @@ do
             color="$2"; shift;
             shift;;
         -n)
-            size="$2"; shift;
+            if [ $2 -gt 60 ]; then
+                if [  $2 -lt 600 ]; then
+                    size="$2"; shift;
+                else
+                echo "num should be in range 60 - 600";
+                echo "Usage: cpuplot [-h] [-o out_file_name] [-t type] [-c color] -n <60-600>";
+                exit 2;
+                fi
+            else
+                echo "num should be in range 60 - 600";
+                echo "Usage: cpuplot [-h] [-o out_file_name] [-t type] [-c color] -n <60-600>";
+                exit 2;
+            fi
             shift;;
         "")
             shift; break;;
