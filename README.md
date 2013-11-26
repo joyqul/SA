@@ -49,3 +49,5 @@ Codes for the system administration class.
     The x-axis means “time from now”. You can’t predict future, so the value should be negative.
     The CPU usage is appended to the log file every second. If you get “-n 60” it means you should draw the last 60 lines in the log file.
  
+#### gnuplot.cmd
+- Using gnuplot this tool to draw picture, and this file contains the command test.
