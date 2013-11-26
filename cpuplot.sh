@@ -70,5 +70,32 @@ if [ $size -eq 0 ]; then
     exit 2;
 fi
 
+# Gernerate cpuusage_tmp for command to use
+awk '{ print NR - 600" "$1}' cpuusage | tail -n $size > cpuusage_tmp
+
+# Generate a temparary file to set the command file
+echo "set terminal png" >> gnuplot_tmp
+echo "set output '"$out_file_name"'">> gnuplot_tmp
+if [ $type = "filledcurve" ]; then
+    echo "set style data filledcurve above y1=0" >> gnuplot_tmp
+else
+    echo "set style data lines" >> gnuplot_tmp
+fi
+echo "set grid" >> gnuplot_tmp
+echo "set title 'CPU Usage'" >> gnuplot_tmp
+echo "set xlabel 'time from now (sec)'" >> gnuplot_tmp
+echo "set ylabel 'CPU Usage (%)'" >> gnuplot_tmp
+echo "set ytics 20" >> gnuplot_tmp
+echo "set sample" $size >> gnuplot_tmp
+echo "set xrange[-"$size":0]" >> gnuplot_tmp
+echo "set yrange[0:100]" >> gnuplot_tmp
+echo "plot 'cpuusage_tmp' using 1:2 lt rgb " '"'$color'"' "notitle" >> gnuplot_tmp
+echo "set output" >> gnuplot_tmp
+echo "quit" >> gnuplot_tmp
+
 # Start drawing picture
-gnuplot gnuplot.cmd
+gnuplot gnuplot_tmp
+
+# Remove temp file
+rm -f gnuplot_tmp
+rm -f cpuusage_tmp
