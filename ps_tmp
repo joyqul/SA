@@ -1,0 +1,56 @@
+USER           PID  %CPU %MEM    VSZ   RSS TT  STAT STARTED            TIME COMMAND
+root            11 400.0  0.0      0    64 ??  RL   五10下午 23425:39.03 [idle]
+root             0   0.0  0.0      0  2496 ??  DLs  五10下午     0:56.23 [kernel]
+root             1   0.0  0.0   6276   564 ??  ILs  五10下午     0:00.19 /sbin/init --
+root             2   0.0  0.0      0    16 ??  DL   五10下午     0:00.00 [mpt_recovery0]
+root             3   0.0  0.0      0    16 ??  DL   五10下午     0:01.16 [fdc0]
+root             4   0.0  0.0      0    16 ??  DL   五10下午     0:00.00 [sctp_iterator]
+root             5   0.0  0.0      0    16 ??  DL   五10下午     0:00.00 [xpt_thrd]
+root             6   0.0  0.0      0    16 ??  DL   五10下午     0:00.29 [pagedaemon]
+root             7   0.0  0.0      0    16 ??  DL   五10下午     0:00.00 [vmdaemon]
+root             8   0.0  0.0      0    16 ??  DL   五10下午     0:00.01 [pagezero]
+root             9   0.0  0.0      0    16 ??  DL   五10下午     0:01.38 [bufdaemon]
+root            10   0.0  0.0      0    16 ??  DL   五10下午     0:00.00 [audit]
+root            12   0.0  0.0      0   272 ??  WL   五10下午     7:37.42 [intr]
+root            13   0.0  0.0      0    48 ??  DL   五10下午     0:04.95 [geom]
+root            14   0.0  0.0      0    16 ??  DL   五10下午     0:13.95 [yarrow]
+root            15   0.0  0.0      0    16 ??  DL   五10下午     4:27.31 [syncer]
+root            16   0.0  0.0      0    16 ??  DL   五10下午     0:01.35 [vnlru]
+root            17   0.0  0.0      0    16 ??  DL   五10下午     0:02.91 [softdepflush]
+root            35   0.0  0.0      0    96 ??  DL   五10下午     0:16.62 [zfskern]
+root           148   0.0  0.0   9952  1436 ??  Is   五10下午     0:00.00 adjkerntz -i
+root           805   0.0  0.1  10376  4412 ??  Is   五10下午     0:00.11 /sbin/devd
+root           939   0.0  0.0  12084  1684 ??  Ss   五10下午     0:01.13 /usr/sbin/syslogd -s
+transmission   997   0.0  0.9 135828 73864 ??  Ss   五10下午     4:51.14 /usr/local/bin/transmission-daemon -c /home/f
+root          1012   0.0  0.1  55796  6112 ??  Ss   五10下午     0:02.60 /usr/local/sbin/nmbd -D -s /usr/local/etc/smb
+root          1015   0.0  0.1  84928 10252 ??  Is   五10下午     0:00.20 /usr/local/sbin/smbd -D -s /usr/local/etc/smb
+root          1022   0.0  0.1  85452 10384 ??  I    五10下午     0:00.89 /usr/local/sbin/smbd -D -s /usr/local/etc/smb
+nobody        1024   0.0  0.1  34364  4432 ??  Ss   五10下午     0:05.08 proftpd: (accepting connections) (proftpd)
+root          1061   0.0  0.0  22256  3488 ??  Ss   五10下午     0:11.67 /usr/sbin/ntpd -c /etc/ntp.conf -p /var/run/n
+root          1075   0.0  0.1  46876  5328 ??  Is   五10下午     0:02.00 /usr/sbin/sshd
+root          1078   0.0  0.1  20340  4708 ??  Ss   五10下午     0:04.67 sendmail: accepting connections (sendmail)
+smmsp         1081   0.0  0.1  20340  4604 ??  Is   五10下午     0:00.09 sendmail: Queue runner@00:30:00 for /var/spoo
+root          1085   0.0  0.0  14176  1832 ??  Is   五10下午     0:00.86 /usr/sbin/cron -s
+root         54102   0.0  0.3  43452 23424 ??  Ss    4:14下午    16:01.81 screen
+root         54511   0.0  0.1  72136  5884 ??  Is    7:27下午     0:00.02 sshd: joyqul [priv] (sshd)
+joyqul       54514   0.0  0.1  72136  5908 ??  S     7:27下午     0:03.44 sshd: joyqul@pts/0 (sshd)
+root          1119   0.0  0.0  12084  1656 v0  Is+  五10下午     0:00.00 /usr/libexec/getty Pc ttyv0
+root          1120   0.0  0.0  12084  1656 v1  Is+  五10下午     0:00.00 /usr/libexec/getty Pc ttyv1
+root          1121   0.0  0.0  12084  1656 v2  Is+  五10下午     0:00.00 /usr/libexec/getty Pc ttyv2
+root          1122   0.0  0.0  12084  1656 v3  Is+  五10下午     0:00.00 /usr/libexec/getty Pc ttyv3
+root          1123   0.0  0.0  12084  1656 v4  Is+  五10下午     0:00.00 /usr/libexec/getty Pc ttyv4
+root          1124   0.0  0.0  12084  1656 v5  Is+  五10下午     0:00.00 /usr/libexec/getty Pc ttyv5
+root          1125   0.0  0.0  12084  1656 v6  Is+  五10下午     0:00.00 /usr/libexec/getty Pc ttyv6
+root          1126   0.0  0.0  12084  1656 v7  Is+  五10下午     0:00.00 /usr/libexec/getty Pc ttyv7
+joyqul       54515   0.0  0.0  17564  4156  0  Is    7:27下午     0:00.01 -tcsh (tcsh)
+joyqul       54517   0.0  0.0  22972  2924  0  S+    7:27下午     0:00.04 screen -rd
+joyqul       55376   0.0  0.1  17564  4208  1  Is+  11:09下午     0:00.05 /bin/tcsh
+joyqul       54104   0.0  0.1  17564  4688  2  Ss    4:14下午     0:00.30 /bin/tcsh
+joyqul       55263   0.0  0.0  14536  2424  2  I    10:29下午     0:00.00 /bin/sh ./sysmonitor.sh -a
+joyqul       55264   0.0  0.0   3812  1472  2  I    10:29下午     0:00.00 sleep 999999
+joyqul       55266   0.0  0.0  14536  2424  2  I    10:29下午     0:00.00 /bin/sh ./sysmonitor.sh -a
+joyqul       55267   0.0  0.0   3812  1472  2  I    10:29下午     0:00.00 sleep 999999
+joyqul       55553   0.0  0.1  23976  7796  2  T    11:39下午     0:10.76 vim sysmonitor.sh
+root         56369   0.0  0.0  48796  4108  2  S+   12:10上午     0:00.01 sudo ./sysmonitor.sh -a
+root         56370   0.0  0.0  14536  2428  2  S+   12:10上午     0:00.00 /bin/sh ./sysmonitor.sh -a
+root         56386   0.0  0.0  14220  2064  2  R+   12:10上午     0:00.00 ps aux
