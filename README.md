@@ -51,3 +51,34 @@ Codes for the system administration class.
  
 #### gnuplot.cmd
 - Using gnuplot this tool to draw picture, and this file contains the command test.
+
+#### sysmonitor.sh
+###### Requirement
+- Your script should be in /usr/local/bin/.
+- sysmonitor --logfile filename --email yourname@server
+- Log the usage per second to the file specify by --logfile
+- Do not need to implement fool-proof. You can add additional arguments if you need.
+- If the user is not root, you should print some error message and exit.
+
+Part 1: Get and calculate the CPU usage and log it to a file
+------
+- Get CPU usage of each process from ps(1).
+- (sum of CPU usage exclude [idle] process) / (sum of CPU usage)
+- Assume the PID of idle process is 11.
+- You can only call ps once per second.
+- If the CPU usage is higher than 90% over 5 seconds, you should send a email out to notify you.
+- When you send a mail, you are allowed to call ps at the second time.
+- Only send one mail if the loading is continuously high.
+- Sample mail format
+
+>   You should exclude the [idle] process.
+    List top 5 processes of CPU usage. You should sort the result by CPU usage.
+    You should display the same columns as below.
+  
+Part 2: Write a RC script to manage it
+------
+- Your RC script should be in /usr/local/etc/rc.d/.
+- Start it when system start.
+- Can use service(8) to start or stop it.
+- You should log the running pid in "/var/run/sysmonitord.pid"
+    
