@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+
+. /etc/rc.subr
+
+name="sysmonitor"
+rcvar=sysmonitor_enable
+
+command="/usr/local/bin/${name}"
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+
+sysmonitor_start()
+{
+    /usr/local/bin/sysmonitor --logfile cpuusage --email joy1357924680@gmail.com &
+}
+
+sysmonitor_stop()
+{
+    kill `cat /var/run/sysmonitord.pid`
+    rm -f /var/run/sysmonitord.pid
+}
+
+load_rc_config $name
+run_rc_command "$1"
