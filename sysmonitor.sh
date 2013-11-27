@@ -2,8 +2,12 @@
 if [ -z $1 ]; then
     echo "Usage: sysmonitor --logfile filename --email yourname@server"
     $0 -a &
+    echo $! > /var/run/sysmonitord.pid
     exit
 else
+    # Record PID
+    echo $$ > /var/run/sysmonitord.pid
+
     # Check id
     if [ "$(id -u)" != "0" ]; then
         echo "This script must be run as root" 1>&2
