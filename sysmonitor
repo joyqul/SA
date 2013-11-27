@@ -1,9 +1,13 @@
 #!/bin/sh
-#
+
+# PROVIDE: sysmonitor
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: nojail shutdown
 
 . /etc/rc.subr
 
-name="sysmonitor"
+name=sysmonitor
 rcvar=sysmonitor_enable
 
 command="/usr/local/bin/${name}"
