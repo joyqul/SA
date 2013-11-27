@@ -71,7 +71,8 @@ if [ $size -eq 0 ]; then
 fi
 
 # Gernerate cpuusage_tmp for command to use
-awk '{ print NR - 600" "$1}' cpuusage | tail -n $size > cpuusage_tmp
+echo ${LOGFILE:="/tmp/sysmonitor"} > /dev/null
+tail -n 600 $LOGFILE | awk '{ print NR - 600" "$1}' | tail -n $size > cpuusage_tmp
 
 # Generate a temparary file to set the command file
 echo "set terminal png" >> gnuplot_tmp

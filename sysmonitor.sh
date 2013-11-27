@@ -16,16 +16,15 @@ else
 
     # Get the args 
     if [ $1 = "--logfile" ]; then
-        FILENAME=$2
+        LOGFILE=$2
         EMAIL=$4
     else
-        FILENAME=$4
+        LOGFILE=$4
         EMAIL=$2
     fi
 
     # Monitor
     TIMES=0
-    FILE_PATH="/usr/home/joyqul/sahw/"
     while [ 1 ] 
     do
         ps ax -o pid -o user -o %cpu -o rss -o time -o command -r > ps_tmp
@@ -33,7 +32,7 @@ else
         TOTAL_SIZE=`awk '{ if(NR > 1) {size+=$3} } END { print size}' ps_tmp`
         USAGE_SIZE=`echo "$TOTAL_SIZE - $IDLE_SIZE" | bc`
         CPUUSAGE=`echo "$USAGE_SIZE * 100 / $TOTAL_SIZE" | bc`
-        echo $CPUUSAGE >> $FILE_PATH$FILENAME
+        echo $CPUUSAGE >> ${LOGFILE:="/tmp/sysmonitor"}
 
         # Use TIMES to record cpu loading is too high's condition
         if [ $CPUUSAGE -gt 90 ]; then
