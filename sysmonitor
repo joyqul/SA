@@ -17,7 +17,7 @@ stop_cmd="${name}_stop"
 
 sysmonitor_start()
 {
-    /usr/local/bin/sysmonitor --logfile cpuusage --email joy1357924680@gmail.com &
+    /usr/local/bin/sysmonitor --email joy1357924680@gmail.com &
 }
 
 sysmonitor_stop()

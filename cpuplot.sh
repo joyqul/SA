@@ -6,6 +6,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Set argument
+npath=`pwd`
 size=0
 out_file_name="out.png"
 type="filledcurve"
@@ -76,7 +77,7 @@ tail -n 600 $LOGFILE | awk '{ print NR - 600" "$1}' | tail -n $size > cpuusage_t
 
 # Generate a temparary file to set the command file
 echo "set terminal png" >> gnuplot_tmp
-echo "set output '"$out_file_name"'">> gnuplot_tmp
+echo "set output '"$npath""/""$out_file_name"'">> gnuplot_tmp
 if [ $type = "filledcurve" ]; then
     echo "set style data filledcurve above y1=0" >> gnuplot_tmp
 else
