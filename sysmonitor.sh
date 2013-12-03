@@ -33,6 +33,7 @@ else
         USAGE_SIZE=`echo "$TOTAL_SIZE - $IDLE_SIZE" | bc`
         CPUUSAGE=`echo "$USAGE_SIZE * 100 / $TOTAL_SIZE" | bc`
         echo $CPUUSAGE >> ${LOGFILE:="/tmp/sysmonitor"}
+        `uptime | awk '{print $9}' >> /tmp/loading`
 
         # Use TIMES to record cpu loading is too high's condition
         if [ $CPUUSAGE -gt 90 ]; then
